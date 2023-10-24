@@ -1,0 +1,45 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using MoreMountains.Tools;
+
+public class Navegacion : MonoBehaviour
+
+public class Tower
+{
+    public int Damage { get; set; }
+    public int Range { get; set; }
+    public int Cost { get; set; }
+    public int Level { get; set; }
+
+    public Tower(int damage, int range, int cost)
+    {
+        Damage = damage;
+        Range = range;
+        Cost = cost;
+        Level = 1;
+    }
+
+    public void Upgrade()
+    {
+        Level++;
+        Damage += 5;
+        Range += 10;
+        Cost += 50;
+    }
+
+    public void Attack(Enemy enemy)
+    {
+        if (InRange(enemy))
+        {
+            enemy.TakeDamage(Damage);
+        }
+    }
+
+    private bool InRange(Enemy enemy)
+    {
+        return Vector2.Distance(enemy.Position, Position) <= Range;
+    }
+}
+
+

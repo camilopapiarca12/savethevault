@@ -62,6 +62,7 @@ namespace MoreMountains.TopDownEngine
 			}
 			else
 			{
+				Debug.Log($"MOVING TO", _brain.Target);
 				_characterPathfinder3D.SetNewDestination(_brain.Target.transform);
 			}
 		}
