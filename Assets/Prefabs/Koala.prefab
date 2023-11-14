@@ -6838,7 +6838,6 @@ GameObject:
   - component: {fileID: 7793869080243471851}
   - component: {fileID: 7876637710684909181}
   - component: {fileID: 2795223089795041016}
-  - component: {fileID: 8328730330072781911}
   - component: {fileID: -4297796909340105317}
   m_Layer: 13
   m_Name: Koala
@@ -7178,20 +7177,6 @@ MonoBehaviour:
   LockHandlesOnXAxis: 0
   LockHandlesOnYAxis: 0
   LockHandlesOnZAxis: 0
---- !u!114 &8328730330072781911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473204230832457399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b64f42f38bbb364890dd3a0fd7a4d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 2
-  timeBetweenDamage: 0.25
 --- !u!114 &-4297796909340105317
 MonoBehaviour:
   m_ObjectHideFlags: 0
