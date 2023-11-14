@@ -5791,8 +5791,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76433da17338db343b65529c942f76b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPoint: {fileID: 0}
-  path: []
+  StartPoint: {fileID: 3761257928316278217}
+  path:
+  - {fileID: 1870688237}
+  - {fileID: 746234623}
+  - {fileID: 1853102311}
+  - {fileID: 226642585}
+  - {fileID: 1395786109}
+  - {fileID: 1783956286}
+  - {fileID: 1797326473}
+  - {fileID: 1624753966}
+  - {fileID: 1028690379}
 --- !u!4 &1608340599
 Transform:
   m_ObjectHideFlags: 0
@@ -9897,7 +9906,7 @@ PrefabInstance:
     - target: {fileID: 3647808580891470711, guid: b90d3ad031a410d49a4650af6176be53,
         type: 3}
       propertyPath: m_Name
-      value: StartingPoint
+      value: StartPoint
       objectReference: {fileID: 0}
     - target: {fileID: 8168068088063202000, guid: b90d3ad031a410d49a4650af6176be53,
         type: 3}
