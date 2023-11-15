@@ -17,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - Obstacles
   - Ground
@@ -61,4 +61,7 @@ TagManager:
     locked: 0
   - name: Above
     uniqueID: 961700441
+    locked: 0
+  - name: 
+    uniqueID: 1817752791
     locked: 0

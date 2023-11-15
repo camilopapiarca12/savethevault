@@ -13,7 +13,7 @@ public class Turret : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private float targetingRange = 5f;
-
+    [SerializeField] private float rotationSpeed = 5f;
 
     private Transform target;
 
@@ -25,6 +25,11 @@ public class Turret : MonoBehaviour
             return;
         }
         RotateTowardsTarget();
+
+        if (!CheckTargetIsInRange())
+        {
+            target = null;
+        }
     }
 
     private void FindTarget()
@@ -37,12 +42,18 @@ public class Turret : MonoBehaviour
         }
     }
 
+    private bool CheckTargetIsInRange()
+    {
+       return Vector2.Distance(target.position, transform.position) <= targetingRange;
+    }
+
     private void RotateTowardsTarget()
     {
-        float angle = Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) 
+            * Mathf.Rad2Deg - 90f;
 
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
-        turretRotationPoint.rotation = targetRotation;
+        turretRotationPoint.rotation = Quaternion.RotateTowards(turretRotationPoint.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     private void OnDragGizmosSelected()
