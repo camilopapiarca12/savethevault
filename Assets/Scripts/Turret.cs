@@ -13,7 +13,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private Transform firingPoint;
 
     [Header("Attributes")]
-    [SerializeField] private float targetingRange = 5f;
+    [SerializeField] private float targetingRange = 200f;
     [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private float bps = 1f; 
 
@@ -56,9 +56,11 @@ public class Turret : MonoBehaviour
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)
             transform.position, 0f, enemyMask);
+       
         if (hits.Length > 0) 
         {
             target = hits[0].transform;
+            Debug.Log("si sirve mi bro");
         }
     }
 

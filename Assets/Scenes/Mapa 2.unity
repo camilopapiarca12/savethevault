@@ -21764,7 +21764,7 @@ GameObject:
   - component: {fileID: 1296228495}
   - component: {fileID: 1296228496}
   m_Layer: 5
-  m_Name: MenuToggle
+  m_Name: MenuTienda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
