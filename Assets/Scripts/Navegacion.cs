@@ -6,17 +6,7 @@ using UnityEngine.SceneManagement;
 public class Navegacion : MonoBehaviour
 {
     
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
     public void Play()
     {
         SceneManager.LoadScene(1);
@@ -41,7 +31,12 @@ public class Navegacion : MonoBehaviour
     public void Salir()
     {
         Debug.Log("Preiono Salir");
-    } 
+    }
+
+    public void MenuIni()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
 
 
