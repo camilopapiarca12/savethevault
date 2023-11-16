@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2163231913897953093}
   - component: {fileID: 8757684501915807560}
   - component: {fileID: 5416983374532267170}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: KoalaModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4911570458969167204}
   - component: {fileID: 5987249203568643007}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: FallingFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5349580588481897073}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: SecondaryWeaponAttachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 7405469101089268291}
   - component: {fileID: 2692369795150011716}
   - component: {fileID: 1292618969739721437}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: DashParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5403,7 +5403,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 8f01921abf97fda4e92078a32ba7c689, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5464,7 +5463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5772402750460804408}
   - component: {fileID: 4996834998375145171}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: DashMMFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5981,7 +5980,7 @@ GameObject:
   - component: {fileID: 5548149124714082458}
   - component: {fileID: 441477214994666853}
   - component: {fileID: 1984867525395982196}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: ConeOfVision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6063,7 +6062,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3842472480663797690}
   - component: {fileID: 6488119057864622252}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: DamageFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6827,6 +6826,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5014463622184104525}
+  - component: {fileID: 2500770743175586760}
+  - component: {fileID: 2138906955193049784}
   - component: {fileID: 7871009679683960887}
   - component: {fileID: 2305103847817032340}
   - component: {fileID: 2703337095721380539}
@@ -6839,7 +6840,7 @@ GameObject:
   - component: {fileID: 7876637710684909181}
   - component: {fileID: 2795223089795041016}
   - component: {fileID: -4297796909340105317}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: Koala
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6855,7 +6856,7 @@ Transform:
   m_GameObject: {fileID: 7473204230832457399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.96445, y: -43.890617, z: 0}
+  m_LocalPosition: {x: 40.07, y: -43.890617, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6868,6 +6869,35 @@ Transform:
   - {fileID: 8619054268856567182}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2500770743175586760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473204230832457399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4adfcb158efb641b4ef975b12c67de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 7871009679683960887}
+  moveSpeed: 2
+  health: {fileID: 5891261674715737638, guid: f94343f3b021c1f498606c4054b3bf35, type: 3}
+--- !u!114 &2138906955193049784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473204230832457399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af80a40cdc1c13f4ab5c079b9356e0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 2
+  currencyWorth: 50
 --- !u!50 &7871009679683960887
 Rigidbody2D:
   serializedVersion: 4
@@ -6924,7 +6954,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.24}
@@ -7232,7 +7262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2098059807447649905}
   - component: {fileID: 5498265311573288705}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: JumpStartFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7592,7 +7622,7 @@ GameObject:
   - component: {fileID: 6282768454375459426}
   - component: {fileID: 3451236216924342029}
   - component: {fileID: 1862575708528000190}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: Footsteps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12371,7 +12401,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 90b4a85560efd8044ba3c7c82bef32f5, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12432,7 +12461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8619054268856567182}
   - component: {fileID: 3670893542459155265}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: DeathFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12559,7 +12588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3643233264586474486}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: WeaponAttachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12592,7 +12621,7 @@ GameObject:
   - component: {fileID: 9195553035019167103}
   - component: {fileID: 4187729934745075900}
   - component: {fileID: 3575292637284894756}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: DustCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17501,7 +17530,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 90b4a85560efd8044ba3c7c82bef32f5, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

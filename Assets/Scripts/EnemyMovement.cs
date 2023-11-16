@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -13,9 +15,8 @@ public class EnemyMovement : MonoBehaviour
 
     private Transform target;
     private int pathIndex = 0;
-    private float dañoEnemy = 10;
-    private float vidaTotal = 100;
-    public GameObject Finish;
+    
+    public TotalHealth health;
 
     private void Start()
     {
@@ -30,13 +31,8 @@ public class EnemyMovement : MonoBehaviour
 
             if (pathIndex  == LevelManager.main.path.Length) { 
                 EnemySpawner.onEnemyDestroy.Invoke();
+               //health.agregarDaño();
                 Destroy(gameObject);
-                vidaTotal = vidaTotal - dañoEnemy;
-
-                if(vidaTotal <= 0) 
-                {
-                    Finish.SetActive(true);
-                }
                 return;
             }
             else
@@ -53,4 +49,5 @@ public class EnemyMovement : MonoBehaviour
         rb.velocity = direction * moveSpeed;
     }
 
+    
 }
