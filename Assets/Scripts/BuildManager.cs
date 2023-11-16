@@ -21,4 +21,10 @@ public class BuildManager : MonoBehaviour
     {
         return towers[SelectedTower];
     }
+
+    public void SetSelectedTower(int _selectedTower)
+    {
+        SelectedTower = _selectedTower;
+    }
+
 }
