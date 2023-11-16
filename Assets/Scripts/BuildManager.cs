@@ -13,9 +13,9 @@ public class BuildManager : MonoBehaviour
     private int SelectedTower = 0;
 
         private void Awake()
-    {
-        main = this;
-    }
+        {
+            main = this;
+        }
 
     public Tower GetSelectedTower() 
     {

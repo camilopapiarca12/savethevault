@@ -1,6 +1,7 @@
 using MoreMountains.TopDownEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private Transform firingPoint;
 
     [Header("Attributes")]
-    [SerializeField] private float targetingRange = 200f;
+    [SerializeField] private float targetingRange = 10f;
     [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private float bps = 1f; 
 
@@ -50,19 +51,21 @@ public class Turret : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         bulletScript.SetTarget(target);
-    }   
+    }
 
     private void FindTarget()
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)
             transform.position, 0f, enemyMask);
-       
-        if (hits.Length > 0) 
+        Debug.Log(hits[0]);
+        if (hits.Length > 0)
         {
             target = hits[0].transform;
             Debug.Log("si sirve mi bro");
         }
     }
+
+
 
     private bool CheckTargetIsInRange()
     {
@@ -78,7 +81,7 @@ public class Turret : MonoBehaviour
         turretRotationPoint.rotation = Quaternion.RotateTowards(turretRotationPoint.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
-    private void OnDragGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
         Handles.color = Color.cyan;
         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
