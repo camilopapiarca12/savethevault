@@ -13,6 +13,9 @@ public class EnemyMovement : MonoBehaviour
 
     private Transform target;
     private int pathIndex = 0;
+    private float dañoEnemy = 10;
+    private float vidaTotal = 100;
+    public GameObject Finish;
 
     private void Start()
     {
@@ -28,6 +31,12 @@ public class EnemyMovement : MonoBehaviour
             if (pathIndex  == LevelManager.main.path.Length) { 
                 EnemySpawner.onEnemyDestroy.Invoke();
                 Destroy(gameObject);
+                vidaTotal = vidaTotal - dañoEnemy;
+
+                if(vidaTotal <= 0) 
+                {
+                    Finish.SetActive(true);
+                }
                 return;
             }
             else
